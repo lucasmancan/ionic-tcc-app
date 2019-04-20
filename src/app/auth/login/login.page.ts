@@ -42,10 +42,9 @@ export class LoginPage implements OnInit {
     this.authService.login();
     const loader = await this.loadingCtrl.create({
       spinner:"crescent",
-      duration: 2000,
+      duration: 1,
       translucent:true,
-      showBackdrop:true,
-      message:"Conferindo cadastro"
+      showBackdrop:true
     });
 
     loader.present();

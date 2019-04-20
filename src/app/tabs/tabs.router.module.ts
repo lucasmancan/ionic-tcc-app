@@ -23,7 +23,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../sales/sales.module#SalesPageModule'
           }
         ]
       },
@@ -48,7 +48,16 @@ const routes: Routes = [
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
-      }
+      },
+      {
+        path: 'sales/list',
+        children: [
+          {
+            path: '',
+            loadChildren: '../sales/sales.module#SalesPageModule'
+          }
+        ]
+      },
     ]
   }
 ];
