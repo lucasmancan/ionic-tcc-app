@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { ProfileComponent } from '../profile/profile.component';
+import { SettingsComponent } from '../settings/settings.component';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -35,16 +37,19 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: 'home',
         pathMatch: 'full'
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
   }
 ];
 

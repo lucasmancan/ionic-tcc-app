@@ -1,0 +1,69 @@
+<ion-content padding>
+   
+      <div margin padding-horizontal text-center>
+          <img margin src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          <h4 no-margin>
+            <ion-text class="fw700">
+              Sistema de Vendas
+            </ion-text>
+          </h4>
+        </div>
+
+  <form [formGroup]="onLoginForm" class="list-form" padding>
+          <ion-item >
+            <ion-label position="floating">
+              <!-- <ion-icon name="mail" item-start></ion-icon> -->
+              Email
+            </ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <p ion-text class="text08" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+            <ion-text color="danger">
+              Campo necessário
+            </ion-text>
+          </p>
+    
+          <ion-item  >
+            <ion-label position="floating">
+              <!-- <ion-icon name="lock" item-start></ion-icon> -->
+              Senha
+            </ion-label>
+            <ion-input  type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <p ion-text color="danger" class="text08" *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">
+            <ion-text color="danger">
+              Campo necessário
+            </ion-text>
+            </p>
+        </form>
+    <ion-grid>
+      <div padding>
+        <div margin>
+          <ion-button fill="outline" expand="block" (click)="login()" [disabled]="!onLoginForm.valid" tappable>Entrar</ion-button>
+        </div>
+        <div margin>
+        <ion-button size="small" fill="clear" expand="block" routerLink="/register">Não tem uma conta?</ion-button>
+        </div>
+      </div>
+      <ion-grid class="btn-group">
+          <ion-row>
+            <ion-col size="4">
+              <ion-button fill="clear" expand="full" color="primary">
+                <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button fill="clear" expand="full" color="secondary">
+                <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button fill="clear" expand="full" color="danger">
+                <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+    </ion-grid>
+</ion-content>
