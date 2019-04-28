@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestão e Aprendizado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+        <ion-card *ngFor="let artigo of artigos">
+          <img src="../assets/shapes.svg"> 
+          <ion-card-header>
+              <ion-card-subtitle>
+                  {{artigo.subtitle}}
+                    </ion-card-subtitle>
+                <ion-card-title>
+                    {{artigo.title}}
+                </ion-card-title>             
+          </ion-card-header>
+       <ion-card-content>
+         <!-- {{artigo.text}} -->
+         <ion-button fill="outline" (click)="goToArticle(artigo)" slot="end">Saiba Mais</ion-button>
+
+       </ion-card-content>
+
+        </ion-card>
+</ion-content>

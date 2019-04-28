@@ -10,16 +10,16 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../dashboard/dashboard.module#DashboardPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'extrato',
         children: [
           {
             path: '',
@@ -28,14 +28,23 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'gestao',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../learning/learning.module#LearningPageModule'
           }
         ]
       },
+      // {
+      //   path: 'pessoas',
+      //   children: [
+      //     {
+      //       path: '',
+      //       loadChildren: '../people/people.module#PeoplePageModule'
+      //     }
+      //   ]
+      // },
       {
         path: 'profile',
         component: ProfileComponent
@@ -68,4 +77,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

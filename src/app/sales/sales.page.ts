@@ -53,7 +53,7 @@ export class SalesPage implements OnInit {
   }
 
   async getAllSales({ searchString, filter }: { searchString?: string; filter?: any; } = {}) {
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 50; i++) {
       this.sales.push(this.sale);
     }
   }

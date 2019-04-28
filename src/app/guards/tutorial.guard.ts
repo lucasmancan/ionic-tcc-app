@@ -3,13 +3,14 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Rout
 import { Observable } from 'rxjs';
 // ...omitted
 import { Storage } from '@ionic/storage';
+import { AuthService } from 'src/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TutorialGuard implements CanActivate {
 
-  constructor(private storage: Storage, private router: Router) {}
+  constructor(private storage: Storage, private router: Router,private authService: AuthService ) {}
 
   async canActivate(
     next: ActivatedRouteSnapshot,
@@ -20,6 +21,10 @@ export class TutorialGuard implements CanActivate {
 
     if (!isComplete) {
       this.router.navigateByUrl('/tutorial');
+    }
+
+    if(this.authService.isAuthenticated()){
+      this.router.navigate(["/home"]);
     }
 
     return isComplete;

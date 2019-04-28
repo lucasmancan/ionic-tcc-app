@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="end" fill="clear" [routerLink]="['/home/settings']">
+      <ion-icon name="settings"></ion-icon>
+    </ion-button>
+    <!-- <ion-button slot="start" fill="clear" [routerLink]="['/home/profile']">
+      <ion-icon name="person"></ion-icon>
+    </ion-button>  -->
+    <ion-title>Meu Negócio</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- 
+<ion-toolbar>
+    <ion-button  fill="clear" [routerLink]="['/home/settings']">
+      <ion-icon name="settings"></ion-icon>   
+    </ion-button>  -->
+<ion-content>
+  <ion-slides [pager]="true" [options]="slidesOpts">
+    <ion-slide>
+      <ion-card class="text-center">
+        <ion-card-header>
+          <ion-card-title>Patrimônio</ion-card-title>
+          <ion-card-subtitle no-padding no-margin><small>Atualizado em 21/04/2019</small> </ion-card-subtitle>
+          <ion-card-title class="primary-title"><strong>R$ 1.500,00</strong></ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="text-center" no-padding>
+          <ion-text no-padding>
+            <h4><strong>Meu Crescimento</strong></h4>
+            <ion-text>
+              <ion-text color="success"><strong>23%</strong></ion-text> últimos 30 dias
+            </ion-text>
+          </ion-text>
+          <google-chart [data]="pieChartVendas"></google-chart>
+
+
+          <!-- <google-chart [data]="verticalChart"></google-chart>  -->
+
+
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="text-center">
+        <ion-card-header>
+          <ion-card-title>Produtos e Serviços</ion-card-title>
+          <ion-card-subtitle no-padding no-margin><small>Atualizado em 21/04/2019</small> </ion-card-subtitle>
+          <ion-card-title class="primary-title"><strong>56 Registros</strong></ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="text-center" no-padding>
+          <ion-text no-padding>
+            <h4><strong>Mais Vendido</strong></h4>
+            <ion-text>Pizza</ion-text>
+          </ion-text>
+          <!-- <google-chart [data]="columnChart"></google-chart> -->
+          <google-chart [data]="pieChartData"></google-chart>
+
+
+          <!-- <google-chart [data]="verticalChart"></google-chart>  -->
+
+
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+  </ion-slides>
+  <ion-slides [options]="slidesOptsSecondary">
+    <ion-slide>
+      <ion-card color="dark">
+
+        <ion-card-header>
+          <ion-card-title>
+                  <ion-text>Maquininhas</ion-text>
+          </ion-card-title>
+          <ion-card-subtitle>
+              <ion-icon name="card"></ion-icon>
+            </ion-card-subtitle>
+        </ion-card-header>
+    
+      </ion-card>
+
+    </ion-slide>
+    <ion-slide>
+      <ion-card color="dark">
+        <ion-card-header>
+          <ion-card-title>
+              <ion-text>Minha Conta</ion-text>
+          </ion-card-title>
+          <ion-card-subtitle>
+              <ion-icon name="paper"></ion-icon>
+
+          </ion-card-subtitle>
+        </ion-card-header>
+
+      </ion-card>
+
+    </ion-slide>
+    <ion-slide>
+      <ion-card color="dark">
+        <ion-card-header>
+          <ion-card-title>
+                  <ion-text>Minha Ajuda</ion-text>
+          </ion-card-title>
+         
+          <ion-card-subtitle>
+              <ion-icon name="help-circle-outline"></ion-icon>
+            </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+
+    </ion-slide>
+    <ion-slide>
+      <ion-card color="dark">
+        <ion-card-header>
+          <ion-card-title>
+              <ion-text>Preferências</ion-text>
+          </ion-card-title>
+          <ion-card-subtitle>
+              <ion-icon name="settings"></ion-icon>
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>

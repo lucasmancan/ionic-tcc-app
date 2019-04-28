@@ -6,13 +6,15 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', loadChildren: './tabs/tabs.module#TabsPageModule'},
+  { path: 'home', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthGuard]},
   { path: 'tutorial', loadChildren: './tutorial/tutorial.module#TutorialPageModule'},
   { path: 'options', loadChildren: './options/options.module#OptionsPageModule' , canActivate: [AuthGuard]},
   { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule', canActivate: [TutorialGuard]   },
   { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule', canActivate: [TutorialGuard]  },
-  { path: 'sales', loadChildren: './sales/sales.module#SalesPageModule' },
-  { path: 'search-filter', loadChildren: './search-filter/search-filter.module#SearchFilterPageModule' },
+  { path: 'sales', loadChildren: './sales/sales.module#SalesPageModule' , canActivate: [AuthGuard]},
+  { path: 'search-filter', loadChildren: './search-filter/search-filter.module#SearchFilterPageModule' , canActivate: [AuthGuard]},
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' , canActivate: [AuthGuard]},
+  // { path: 'people', loadChildren: './people/people.module#PeoplePageModule' },
 ];
 @NgModule({
   imports: [

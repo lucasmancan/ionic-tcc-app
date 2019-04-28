@@ -17,9 +17,9 @@
         </ion-toolbar>
   </ion-header>
 <ion-content>
-<!-- <ion-list-header>
-    <ion-label>Histórico de Vendas</ion-label>
-  </ion-list-header> -->
+<ion-list-header>
+    <ion-label>Suas Vendas</ion-label>
+  </ion-list-header>
     <ion-virtual-scroll [items]="sales">
         <ion-item *virtualItem="let sale" (click)="editSale(sale)">
             <ion-grid>
