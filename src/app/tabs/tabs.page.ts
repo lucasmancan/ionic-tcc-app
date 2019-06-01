@@ -4,6 +4,7 @@ import { OptionsPage } from '../options/options.page';
 import { OverlayEventDetail } from '@ionic/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
@@ -13,7 +14,7 @@ export class TabsPage {
 
   constructor(private modalController: ModalController, public router: Router) { }
 
-  public routerName: any;
+  public routerName: any = "home";
 
   async openModal() {
     const modal: HTMLIonModalElement =

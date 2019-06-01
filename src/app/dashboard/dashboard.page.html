@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content style="--background: linear-gradient(#2a3132, #000);">
-  <ion-slides [pager]="false" [options]="slidesOpts">
+  <ion-slides [pager]="false" [options]="slidesOpts" class="animation-fadeIn">
     <ion-slide>
       <ion-card class="text-center" style="--background: #2a3132">
         <ion-card-header>
@@ -52,7 +52,7 @@
 
   </ion-slides>
   
-  <ion-slides [options]="slidesOptsSecondary">
+  <ion-slides [options]="slidesOptsSecondary" class="animation-fadeIn">
     
     <ion-slide>
       <ion-card style="--background: #f2f2f2; border-radius: 5px;">
