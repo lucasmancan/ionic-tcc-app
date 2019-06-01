@@ -1,23 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Gestão e Aprendizado</ion-title>
+<ion-header style="--background: transparent">
+  <ion-toolbar style="--background: #2a3132;">
+    <ion-title style="color: #f2f2f2;">Gestão & Aprendizado</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-        <ion-card *ngFor="let artigo of artigos">
-          <img src="../assets/shapes.svg"> 
+<ion-content style="--background: linear-gradient(#2a3132, #000);">
+        <ion-card *ngFor="let artigo of artigos" style="--background: #2a3132" class="animation-fadeIn">
+          <img src="../../../assets/images/blog_image_teste.jpg"> 
           <ion-card-header>
-              <ion-card-subtitle>
+              <ion-card-subtitle style="color: #ba5536;">
                   {{artigo.subtitle}}
                     </ion-card-subtitle>
-                <ion-card-title>
+                <ion-card-title style="color: #f2f2f2;">
                     {{artigo.title}}
                 </ion-card-title>             
           </ion-card-header>
        <ion-card-content>
          <!-- {{artigo.text}} -->
-         <ion-button fill="outline" (click)="goToArticle(artigo)" slot="end">Saiba Mais</ion-button>
+         <ion-button style="--background: #f2f2f2; color: #2a3132; border: none;" (click)="goToArticle(artigo)" slot="end">Saiba Mais</ion-button>
 
        </ion-card-content>
 

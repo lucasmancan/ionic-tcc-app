@@ -1,24 +1,31 @@
-<ion-header>
-    <ion-toolbar>
+<ion-header style="--background: transparent">
+    <ion-toolbar style="--background: #2a3132;">
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
           </ion-buttons>
-      <ion-title>{{artigo.title}}</ion-title>
+      <ion-title style="color: #f2f2f2;">{{artigo.title}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content style="--background: linear-gradient(#2a3132, #000);">
+    <img src="../../../assets/images/blog_image_teste.jpg"> 
+    
+    <ion-card-header style="--background: transparent;" class="animation-fadeIn">
+          <ion-card-title style="color: #f2f2f2;">
+              {{artigo.title}}
+          </ion-card-title>
 
-    <img src="../assets/shapes.svg"> 
-    <ion-card-header>
-          <ion-card-title>
-                        {{artigo.subtitle}}
-          </ion-card-title>             
+          <ion-card-subtitle style="color: #ba5536;">
+              {{artigo.subtitle}}
+          </ion-card-subtitle>             
     </ion-card-header>
-    <ion-card-content>
-        <ion-text>
+    
+    <ion-card-content style="background: #f2f2f2; padding: 12px; border: 1px solid #f2f2f2; border-radius: 5px; margin: 2px 15px 2px 15px;" class="animation-fadeIn">
+        <ion-text style="color: #2a3132;">
             {{artigo.text}} 
          </ion-text>
     </ion-card-content>
- </ion-content>
+ 
+ 
+  </ion-content>
 

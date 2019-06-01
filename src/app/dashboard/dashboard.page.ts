@@ -59,6 +59,7 @@ public pieChartVendas:GoogleChartInterface = {
   ],
   options: {
     title: 'Vendas Mensais',
+    backgroundColor: '#f2f2f2',
     'width': 400,
     'height': 300,
     slices: {
