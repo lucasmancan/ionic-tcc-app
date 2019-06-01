@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class SalesPage implements OnInit {
 
-  sale: any = { id: "213123", clientName: "Lucas", totalValue: "232" }
+  sale: any = { id: "213123", date: "02 de Dezembro ás 16:22", type: "Débito", clientName: "Lucas Frederico Mançan", totalValue: "2.140,78", gateway: "PagSeguro"}
 
   public searchKey: string = '';
-  sales: any[] = [];
+  sales: any[] = [{ id: "213123", date: "05 de Maio ás 12:42", type: "Crédito", clientName: "Pedro Henrique Farbo Costa", totalValue: "12.500,00", gateway: "Cielo"}, { id: "213123",  date: "30 de Feveiro ás 10:12", type: "Crediário", clientName: "Matheus Henrique da Silva", totalValue: "2.320,50", gateway: "Paypal"}];
 
   private _filterObj: any = {};
   constructor(public modalCtrl: ModalController, public router: Router) { }
