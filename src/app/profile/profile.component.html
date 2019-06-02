@@ -1,79 +1,113 @@
-<ion-header>
-    <ion-toolbar>
-      <ion-title >
-          Perfil
-          </ion-title>
-          <ion-button slot="end" fill="clear" [routerLink]="['/home/settings']">
-            <ion-icon name="settings"></ion-icon>
-                      </ion-button>
-       </ion-toolbar>
-  </ion-header>
-<ion-content class="profile">
-    <ion-card no-margin>
-      <ion-card-content class="bg-profile">
-          <ion-avatar>
-              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-            </ion-avatar>
-        <h1 class="fw500">João Firmino</h1>
-        <h2 color="light" margin-bottom>Customer</h2>
-        <ion-button icon-left fill="clear " color="secondary">
-          <ion-icon name="photos"></ion-icon> 
-          Edit / Add Avatar
-        </ion-button>
-      </ion-card-content>
-    
-      <ion-grid fixed no-padding>
-        <ion-row>
-          <ion-col size="12" padding>
-  
-            <ion-list margin-bottom>
-              <ion-list-header color="light">
-                <ion-label class="fw700">Form</ion-label>
-              </ion-list-header>
-  
-              <ion-item>
-                <ion-label color="dark" position="stacked">Full Name:</ion-label>
-                <ion-input inputmode="text" placeholder="Ex..: Joe Doe" value="João Firmino"></ion-input>
-              </ion-item>
-      
-              <ion-item>
-                <ion-label color="dark" position="stacked">Email:</ion-label>
-                <ion-input inputmode="email" placeholder="Ex.: joe@doe.com" value="firminoata@gmail.com"></ion-input>
-              </ion-item>
-      
-              <ion-item>
-                <ion-label color="dark" position="stacked">Address:</ion-label>
-                <ion-input inputmode="text" placeholder="Ex.: Abey Road 5"></ion-input>
-              </ion-item>
-      
-              <ion-item>
-                <ion-label color="dark">City</ion-label>
-                <ion-select>
-                  <ion-select-option value="nes">New York</ion-select-option>
-                  <ion-select-option value="n64">Los Angeles</ion-select-option>
-                  <ion-select-option value="ps">London</ion-select-option>
-                  <ion-select-option value="genesis">Paris</ion-select-option>
-                  <ion-select-option value="saturn">São Paulo</ion-select-option>
-                  <ion-select-option value="snes">Tokyo</ion-select-option>
-                  <ion-select-option value="snes">New Delhi</ion-select-option>
-                </ion-select>
-              </ion-item>
-      
-              <ion-item>
-                <ion-label color="dark">State</ion-label>
-                <ion-select>
-                  <ion-select-option value="nes">NY</ion-select-option>
-                  <ion-select-option value="n64">CA</ion-select-option>
-                  <ion-select-option value="ps">Greater London</ion-select-option>
-                  <ion-select-option value="genesis">Paris</ion-select-option>
-                  <ion-select-option value="saturn">SP</ion-select-option>
-                  <ion-select-option value="snes">Kantō</ion-select-option>
-                  <ion-select-option value="snes">Delhi</ion-select-option>
-                </ion-select>
-              </ion-item>
-            </ion-list>
-  
-            <ion-list>
+<ion-header style="--background: transparent">
+  <ion-toolbar style="--background: #2a3132;">
+    <ion-title style="color: #f2f2f2;">
+      Perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile" style="--background: linear-gradient(#2a3132, #000);">
+  <ion-card no-margin style="--background: transparent; color: #f2f2f2">
+    <ion-card-content class="bg-profile" style="text-align: center;">
+      <ion-avatar style="margin: auto; margin-bottom: 10px;">
+        <img style="border: 2px solid #f2f2f2; opacity: 0.8;"
+          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <h1 class="fw500">Lucas F.</h1>
+      <h2 color="light" margin-bottom>Marmitaria do Zé</h2>
+      <ion-button icon-left fill="clear" style="color: #f2f2f2;">
+        <ion-icon name="photos"></ion-icon>
+        Editar / Adicionar Foto
+      </ion-button>
+    </ion-card-content>
+
+    <ion-grid fixed no-padding>
+      <ion-row>
+        <ion-col size="12" padding>
+
+          <ion-list margin-bottom
+            style="background:transparent; border: 1px solid #f2f2f2; border-radius: 10px; margin-top: -20px;">
+            <ion-list-header style="--background: #f2f2f2; margin-bottom: 5px;">
+              <ion-label class="fw700" style="color: #2a3132;">Editar Cadastro</ion-label>
+            </ion-list-header>
+
+            <ion-item style="--background:trasparent;">
+              <ion-label color="light" position="stacked">Loja:</ion-label>
+              <ion-input color="light" inputmode="text" placeholder="Ex..: Dogão do Zé" value="Marmitaria do Zé">
+              </ion-input>
+            </ion-item>
+
+            <ion-item style="--background:trasparent;">
+              <ion-label color="light" position="stacked">CPF/CNPJ:</ion-label>
+              <ion-input color="light" inputmode="text" placeholder="Ex..: 152.471.541-88 ou 83.681.526/0001-01"
+                value="08.911.783/0001-77"></ion-input>
+            </ion-item>
+
+            <ion-item style="--background:trasparent;">
+              <ion-label color="light" position="stacked">Representante:</ion-label>
+              <ion-input color="light" inputmode="text" placeholder="Ex..: Roberto da Silva" value="Lucas F.">
+              </ion-input>
+            </ion-item>
+
+            <ion-item style="--background:trasparent;">
+              <ion-label color="light" position="stacked">E-mail:</ion-label>
+              <ion-input color="light" inputmode="email" placeholder="Ex.: roberto.silva@dogaodoze.com.br"
+                value="lucasf@marmitariadoze.com.br"></ion-input>
+            </ion-item>
+
+            <ion-row no-padding>
+              <ion-col size="8" no-padding>
+                <ion-item style="--background:trasparent;">
+                  <ion-label color="light" position="stacked">Endereço:</ion-label>
+                  <ion-input color="light" inputmode="text" placeholder="Ex.: Av. Andrômeda"></ion-input>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="4" no-padding>
+                <ion-item style="--background:trasparent;">
+                  <ion-label color="light" position="stacked">Nº:</ion-label>
+                  <ion-input color="light" inputmode="text" placeholder="Ex.: 2000"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col size="6" no-padding>
+                <ion-item style="--background:trasparent;">
+                  <ion-label color="light">Estado</ion-label>
+                  <ion-select style="color: #f2f2f2;">
+                    <ion-select-option value="SP">SP</ion-select-option>
+                    <ion-select-option value="RJ">RJ</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" no-padding>
+                <ion-item style="--background:trasparent;">
+                  <ion-label color="light">Cidade</ion-label>
+                  <ion-select style="color: #f2f2f2;">
+                    <ion-select-option  value="Barueri">Barueri</ion-select-option>
+                    <ion-select-option  value="Osasco">Osasco</ion-select-option>
+                    <ion-select-option  value="São Paulo">São Paulo</ion-select-option>
+                    <ion-select-option  value="Niterói">Rio de Janeiro</ion-select-option>
+                    <ion-select-option  value="Niterói">Niterói</ion-select-option>
+                    <ion-select-option  value="Cabo Frio">Cabo Frio</ion-select-option>
+                    <ion-select-option  value="Santana de Parnaíba">Santana de Parnaíba</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-item style="--background:trasparent; margin-bottom: 20px;">
+              <ion-label color="light" position="stacked">Complemento:</ion-label>
+              <ion-input color="light" inputmode="text" placeholder="Ex.: Loja 2"></ion-input>
+            </ion-item>
+
+            <ion-button style="--background: #f2f2f2; color: #2a3132;" expand="full" no-margin>Salvar Alterações
+            </ion-button>
+          </ion-list>
+
+          <!-- <ion-list>
               <ion-radio-group>
                 <ion-list-header color="light">
                   <ion-label class="fw700">User Type</ion-label>
@@ -94,19 +128,19 @@
                 <ion-label class="text-1x">Checkbox test</ion-label>
                 <ion-checkbox></ion-checkbox>
               </ion-item>
-            </ion-list>
-    
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    
-      <!-- <ion-button size="large" expand="full" color="dark"  no-margin>Edit</ion-button> -->
-    </ion-card>
-<!--     
+            </ion-list> -->
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- <ion-button size="large" expand="full" color="dark"  no-margin>Edit</ion-button> -->
+  </ion-card>
+  <!--     
     <div padding>
       <ion-text color="dark" no-margin>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum odio placeat incidunt nesciunt atque ratione quisquam, fugit
         omnis maxime adipisci excepturi dignissimos aliquam asperiores itaque unde sequi? Minus, quia, dolore?
       </ion-text>
     </div> -->
-  </ion-content>
+</ion-content>
