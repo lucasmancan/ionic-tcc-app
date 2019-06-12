@@ -37,7 +37,6 @@ export class TabsPage {
 
   verifyRoute(name: any) {
       this.routerName = name;
-      console.log(this.routerName);
   }
 
 }

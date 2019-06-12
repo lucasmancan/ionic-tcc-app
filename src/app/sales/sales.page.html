@@ -1,30 +1,30 @@
 
-<ion-header style="--background: transparent">
-  <ion-toolbar style="--background: #2a3132;">
+<ion-header >
+  <ion-toolbar >
 
-    <ion-searchbar placeholder="Pesquisar" animated style="--background: #f2f2f2; color: #2a3132" [(ngModel)]="searchKey"></ion-searchbar>
+    <ion-searchbar placeholder="Pesquisar" animated  [(ngModel)]="searchKey"></ion-searchbar>
 
     <ion-buttons slot="end">
-      <ion-button style="--background: transparent; color: #f2f2f2" size="small" shape="round" (click)="searchFilter()">
+      <ion-button  size="small" shape="round" (click)="searchFilter()">
         <ion-icon name="options"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="--background: linear-gradient(#2a3132, #000);">
-  <ion-list-header style="--background: transparent; color: #f2f2f2">
+<ion-content >
+  <ion-list-header >
     <ion-label>Histórico de Vendas</ion-label>
   </ion-list-header>
 
   <ion-virtual-scroll [items]="sales" class="animation-fadeIn">
     <ion-item no-lines lines="none" *virtualItem="let sale" (click)="editSale(sale)"
-    style="--background: #2a3132; color: #f2f2f2; border: 1px solid #2a3132; border-radius: 5px; margin: 10px 15px 10px 15px;">
-      <ion-grid style="font-size: 12px">
+    >
+      <ion-grid >
         
         <ion-row>
           <ion-col size="12">
-            <span style="font-weight: bold">{{sale.clientName}}</span>
+            <span >{{sale.clientName}}</span>
           </ion-col>
         </ion-row>
 
@@ -40,7 +40,7 @@
           </ion-col>
 
           <ion-col size="5">
-              <div style="text-align: center; color: #ba5536; font-weight: bold">R$ {{sale.totalValue}}</div>
+              <div >R$ {{sale.totalValue}}</div>
             </ion-col>
         </ion-row>
       

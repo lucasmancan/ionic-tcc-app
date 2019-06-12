@@ -51,7 +51,9 @@ const routes: Routes = [
       },
       {
         path: 'settings',
-        component: SettingsComponent
+        // component: SettingsComponent
+        component: ProfileComponent
+
       },
       {
         path: '',

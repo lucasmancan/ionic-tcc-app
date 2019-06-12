@@ -1,25 +1,32 @@
-<ion-header style="--background: transparent">
-  <ion-toolbar style="--background: #2a3132;">
-    <ion-title style="color: #f2f2f2;">Gestão & Aprendizado</ion-title>
+<ion-header >
+  <ion-toolbar >
+    <ion-title >Gestão & Aprendizado</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="--background: linear-gradient(#2a3132, #000);">
-        <ion-card *ngFor="let artigo of artigos" style="--background: #2a3132" class="animation-fadeIn">
-          <div *ngIf="artigo.verificada" style="opacity: 0.94; background: #2a3132; color: #f2f2f2; margin-bottom: -34px; font-weight: bold; padding: 8px; text-align: center; text-transform: uppercase;"> Mídia Verificada</div>
-          <div *ngIf="artigo.patrocinada" style="opacity: 0.94; background: #2a3132; color: #f2f2f2; margin-bottom: -34px; font-weight: bold; padding: 8px; text-align: center; text-transform: uppercase;"> Mídia Patrocinada ({{artigo.parceiro}})</div>
+<ion-content >
+        <ion-card *ngFor="let artigo of artigos"  mode="ios">
+          <!-- <div *ngIf="artigo.verificada" > 
+            <ion-card mode="ios">
+            Empresa X
+            </ion-card>
+            </div>
+          <div *ngIf="artigo.patrocinada" ><ion-card mode="ios">
+            Empresa X
+          </ion-card>
+        </div> -->
           <img src="../../../assets/images/blog_image_teste.jpg"> 
           <ion-card-header>
-              <ion-card-subtitle style="color: #ba5536;">
+              <ion-card-subtitle >
                   {{artigo.subtitle}}
                     </ion-card-subtitle>
-                <ion-card-title style="color: #f2f2f2;">
+                <ion-card-title >
                     {{artigo.title}}
                 </ion-card-title>             
           </ion-card-header>
        <ion-card-content>
          <!-- {{artigo.text}} -->
-         <ion-button style="--background: #f2f2f2; color: #2a3132; border: none;" (click)="goToArticle(artigo)" slot="end">Saiba Mais</ion-button>
+         <ion-button  (click)="goToArticle(artigo)" slot="end">Saiba Mais</ion-button>
 
        </ion-card-content>
 

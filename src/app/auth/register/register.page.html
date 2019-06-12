@@ -1,15 +1,15 @@
-<ion-content padding class="login auth-page" style="--background: linear-gradient(#2a3132, #000);">
+<ion-content padding class="login auth-page" >
 
   <div margin padding-horizontal text-center>
-    <img margin style="width: 75%" src="../../../assets/images/logo_zyon.png">
+    <img margin  src="../../../assets/images/logo_zyon.png">
 </div>
 
   
       <!-- Register form -->
       <form [formGroup]="onRegisterForm" class="list-form" padding>
-        <ion-item  class="animated fadeInUp" lines="none" style="--background: transparent; color: #f2f2f2; border: 1px solid #2a3132; padding: 5px; border-radius: 4px; margin-bottom: 15px;">
-          <img style="width: 24px; height: 24px; margin-right: 15px;" src="../../../assets/images/shop.png">
-          <ion-input style="--color: #f2f2f2; opacity: 0.6;" placeholder="Loja"  type="text" formControlName="fullName"></ion-input>
+        <ion-item  lines="none" >
+          <!-- <img  src="../../../assets/images/shop.png"> -->
+          <ion-input  placeholder="Loja"  type="text" formControlName="fullName"></ion-input>
         </ion-item>
         <!-- <p ion-text class="text08" *ngIf="onRegisterForm.get('fullName').touched && onRegisterForm.get('fullName').hasError('required')">
           <ion-text color="danger">
@@ -17,10 +17,10 @@
           </ion-text>
         </p> -->
   
-        <ion-item  class="animated fadeInUp" lines="none" style="--background: transparent; color: #f2f2f2; border: 1px solid #2a3132; padding: 5px; border-radius: 4px; margin-bottom: 15px;">
+        <ion-item  class="animated fadeInUp" lines="none">
          
-          <img style="width: 24px; height: 24px; margin-right: 15px;" src="../../../assets/images/email.png">
-          <ion-input  style="--color: #f2f2f2; opacity: 0.6;" placeholder="E-mail" type="email" formControlName="email"></ion-input>
+          <!-- <img  src="../../../assets/images/email.png"> -->
+          <ion-input   placeholder="E-mail" type="email" formControlName="email"></ion-input>
         </ion-item>
         <!-- <p ion-text class="text08" *ngIf="onRegisterForm.get('email').touched && onRegisterForm.get('email').hasError('required')">
           <ion-text color="danger">
@@ -28,9 +28,9 @@
           </ion-text>
         </p> -->
   
-        <ion-item class="animated fadeInUp" lines="none" style="--background: transparent; color: #f2f2f2; border: 1px solid #2a3132; padding: 5px; border-radius: 4px; margin-bottom: 15px;">
-          <img style="width: 24px; height: 24px; margin-right: 15px;" src="../../../assets/images/lock.png">
-          <ion-input style="--color: #f2f2f2; opacity: 0.6;" placeholder="Senha" type="password" formControlName="password"></ion-input>
+        <ion-item class="animated fadeInUp" lines="none" >
+          <!-- <img  src="../../../assets/images/lock.png"> -->
+          <ion-input  placeholder="Senha" type="password" formControlName="password"></ion-input>
         </ion-item>
         <!-- <p ion-text color="danger" class="text08" *ngIf="onRegisterForm.get('password').touched && onRegisterForm.get('password').hasError('required')">
           <ion-text color="danger">
@@ -40,7 +40,7 @@
       </form>
   
       <div margin-top >
-        <ion-button style="--color: #f2f2f2; --border-color: #f2f2f2;" margin icon-left size="medium" expand="block" fill="outline" (click)="signUp()" [disabled]="!onRegisterForm.valid"
+        <ion-button  margin icon-left size="medium" expand="block"  (click)="signUp()" [disabled]="!onRegisterForm.valid"
           tappable>
           Criar Conta
         </ion-button>
@@ -48,17 +48,17 @@
         <ion-grid class="btn-group" margin-top>
           <ion-row>
             <ion-col size="4">
-              <ion-button  expand="full" fill="clear" style="--color: #f2f2f2; opacity: 0.6;" >
+              <ion-button  expand="full" fill="clear"  >
                 <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
               </ion-button>
             </ion-col>
             <ion-col size="4">
-              <ion-button  expand="full" fill="clear" style="--color: #f2f2f2; opacity: 0.6;" >
+              <ion-button  expand="full" fill="clear"  >
                 <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
               </ion-button>
             </ion-col>
             <ion-col size="4">
-              <ion-button  expand="full" fill="clear" style="--color: #f2f2f2; opacity: 0.6;" >
+              <ion-button  expand="full" fill="clear"  >
                 <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
               </ion-button>
             </ion-col>
@@ -73,7 +73,7 @@
           <!-- <ion-text >
             Já tenho uma conta! <span color="primary">Entrar</span>
           </ion-text> -->
-          <ion-button style="--color: #ba5536; opacity: 0.6;" size="small" fill="clear" expand="block" routerLink="/login">Já tenho conta!</ion-button>
+          <ion-button  size="small" fill="clear" expand="block" routerLink="/login">Já tenho conta!</ion-button>
         </span>
       </div>
   
