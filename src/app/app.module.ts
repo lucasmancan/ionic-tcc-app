@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OptionsPageModule } from './options/options.module';
 import { SearchFilterPageModule } from './search-filter/search-filter.module';
+import { SalesService } from 'src/services/sales.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,7 @@ import { SearchFilterPageModule } from './search-filter/search-filter.module';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, OptionsPageModule, SearchFilterPageModule],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen, SalesService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -1,35 +1,35 @@
 
 <ion-tabs>
-    <ion-tab-bar slot="bottom" style="--background: linear-gradient(#000, #2a3132); padding: 10px; height: 65px;">
-    
-        <ion-tab-button (click)="verifyRoute('extrato')" tab="extrato" style="--background: linear-gradient(#f1f1f1, #f2f2f2); padding: 0; color: #2a3132; border-bottom-left-radius: 15px; border-top-left-radius: 15px;">
-          <img *ngIf="routerName === 'extrato'" style="width: 28px; height: 28px; margin-right: 15px;" src="../../../assets/images/list_visited.png">
-          <img *ngIf="routerName !== 'extrato'" style="width: 24px; height: 24px; margin-right: 15px;" src="../../../assets/images/list.png">
-          <ion-label *ngIf="routerName === 'extrato'" style="margin-left: -12px; font-size: 11px;">Extrato</ion-label>
+    <ion-tab-bar slot="bottom" >
+    <ion-tab-button (click)="verifyRoute('gestao')" tab="gestao">
+      <img *ngIf="routerName === 'gestao'" class="img-selected" src="../../../assets/images/brain_visited.png">
+      <img *ngIf="routerName !== 'gestao'" class="img-not-selected" src="../../../assets/images/brain.png">
+      <ion-label *ngIf="routerName === 'gestao'" class="tab-text">Gestão</ion-label>
+    </ion-tab-button>
+
+        <ion-tab-button (click)="verifyRoute('extrato')" tab="extrato" >
+          <img *ngIf="routerName === 'extrato'" class="img-selected" src="../../../assets/images/list_visited.png">
+          <img *ngIf="routerName !== 'extrato'" class="img-not-selected" src="../../../assets/images/list.png">
+          <ion-label *ngIf="routerName === 'extrato'" class="tab-text">Extrato</ion-label>
         </ion-tab-button>
     
-        <ion-tab-button (click)="verifyRoute('home')" tab="home" style="--background: linear-gradient(#f1f1f1, #f2f2f2); padding: 0; color: #2a3132;">
-          <img *ngIf="routerName === 'home'" style="width: 28px; height: 28px; margin-right: 15px;" src="../../../assets/images/analytics_visited.png">
-          <img *ngIf="routerName !== 'home'" style="width: 24px; height: 24px; margin-right: 15px;" src="../../../assets/images/analytics.png">
-          <ion-label *ngIf="routerName === 'home'" style="margin-left: -12px; font-size: 11px;">Negócio</ion-label>
+        <ion-tab-button (click)="verifyRoute('home')" tab="home" >
+          <img *ngIf="routerName === 'home'" class="img-selected" src="../../../assets/images/analytics_visited.png">
+          <img *ngIf="routerName !== 'home'" class="img-not-selected" src="../../../assets/images/analytics.png">
+          <ion-label *ngIf="routerName === 'home'" class="tab-text">Negócio</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button (click)="verifyRoute('gestao')" tab="gestao" style="--background: linear-gradient(#f1f1f1, #f2f2f2); padding: 0; color: #2a3132;">
-          <img *ngIf="routerName === 'gestao'" style="width: 32px; height: 32px; margin-right: 15px;" src="../../../assets/images/brain_visited.png">
-          <img *ngIf="routerName !== 'gestao'" style="width: 28px; height: 28px; margin-right: 15px;" src="../../../assets/images/brain.png">
-          <ion-label *ngIf="routerName === 'gestao'" style="margin-left: -12px; font-size: 11px;">Gestão</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button (click)="verifyRoute('profile')" tab="profile" style="--background: linear-gradient(#f1f1f1, #f2f2f2); padding: 0; color: #2a3132;">
+       
+        <!-- <ion-tab-button (click)="verifyRoute('profile')" tab="profile" >
           <img *ngIf="routerName === 'profile'" style="width: 28px; height: 28px; margin-right: 15px;" src="../../../assets/images/user_visited.png">
           <img *ngIf="routerName !== 'profile'" style="width: 24px; height: 24px; margin-right: 15px;" src="../../../assets/images/user.png">
           <ion-label *ngIf="routerName === 'profile'" style="margin-left: -12px; font-size: 11px;">Perfil</ion-label>
-        </ion-tab-button>
+        </ion-tab-button> -->
 
-        <ion-tab-button (click)="verifyRoute('settings')" tab="settings" style="--background: linear-gradient(#f1f1f1, #f2f2f2); padding: 0;  border-bottom-right-radius: 15px; border-top-right-radius: 15px; color: #2a3132;">
-          <img *ngIf="routerName === 'settings'" style="width: 28px; height: 28px; margin-right: 15px;" src="../../../assets/images/cogs_visited.png">
-          <img *ngIf="routerName !== 'settings'" style="width: 24px; height: 24px; margin-right: 15px;" src="../../../assets/images/cogs.png">
-          <ion-label *ngIf="routerName === 'settings'" style="margin-left: -12px; font-size: 11px;">Confs</ion-label>
+        <ion-tab-button (click)="verifyRoute('settings')" tab="settings" >
+          <img *ngIf="routerName === 'settings'" class="img-selected" src="../../../assets/images/cogs_visited.png">
+          <img *ngIf="routerName !== 'settings'" class="img-not-selected" src="../../../assets/images/cogs.png">
+          <ion-label *ngIf="routerName === 'settings'" class="tab-text">Confs</ion-label>
         </ion-tab-button>
        
       </ion-tab-bar>

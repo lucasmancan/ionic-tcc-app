@@ -14,6 +14,9 @@
 .text-center{
     text-align: center;
 }
+.justify-center{
+    justify-content: center;
+}
 
 .primary-title{
     font-weight: bolder;
@@ -25,5 +28,11 @@
 }
 
 .animation-fadeIn {
-    animation: fadeIn 4s alternate;
+    // animation: fadeIn 4s alternate;
+}
+
+.ion-content{
+    //background: linear-gradient(#2a3132, #000);
+    background:  #000000;
+    color: #ffffff;
 }

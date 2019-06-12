@@ -16,7 +16,7 @@ export class AuthService {
     private storage: Storage,
     private platform: Platform
   ) { 
-    this.platform.ready().then( _ => {
+    this.platform.ready().then( ()=> {
       this.checkToken();
     })
   }
