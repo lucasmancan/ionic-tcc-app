@@ -2,19 +2,20 @@ import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
-const TOKEN_KEY = "X-Auth-Token";
+const TOKEN_KEY = "token";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
 
   authState$: BehaviorSubject<boolean> = new BehaviorSubject(null);
 
   constructor(
     private storage: Storage,
-    private platform: Platform
+    private platform: Platform,
+    private http: HttpClient 
   ) { 
     this.platform.ready().then( ()=> {
       this.checkToken();
@@ -29,10 +30,18 @@ export class AuthService {
     })
   }
 
-  public login() {
-    this.storage.set(TOKEN_KEY, 'Bearer 123456').then( res => {
-      this.authState$.next(true);
-    })
+  public login(data: any) {
+    return this.http.post(environment.baseUrl + '/auth', data, {
+      headers: new HttpHeaders()
+        .set('Access-Control-Allow-Headers', 'Authorization'),
+
+      observe: 'response'
+    }).subscribe((res:any) => {
+      // console.log(res.headers.get('Authorization'));
+      this.storage.set(TOKEN_KEY, res.headers.get('Authorization')).then(res => {
+        this.authState$.next(true);
+      })
+    });
   }
 
   public logout() {
@@ -42,7 +51,6 @@ export class AuthService {
   }
   
   public getAuthStateObserver(): Observable<boolean> {
-
       return this.authState$.asObservable();
     }
 

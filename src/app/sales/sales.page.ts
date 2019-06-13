@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
 import { SearchFilterPage } from '../search-filter/search-filter.page';
 import { Router } from '@angular/router';
+import { SalesService } from 'src/services/sales.service';
 
 @Component({
   selector: 'app-sales',
@@ -16,7 +17,15 @@ export class SalesPage implements OnInit {
   sales: any[] = [{ id: "213123", date: "05 de Maio ás 12:42", type: "Crédito", clientName: "Pedro Henrique Farbo Costa", totalValue: "12.500,00", gateway: "Cielo"}, { id: "213123",  date: "30 de Feveiro ás 10:12", type: "Crediário", clientName: "Matheus Henrique da Silva", totalValue: "2.320,50", gateway: "Paypal"}];
 
   private _filterObj: any = {};
-  constructor(public modalCtrl: ModalController, public router: Router) { }
+  public filterParameters: any = {
+    rangePrice: {
+      lower: 0,
+      upper: 5000
+    },
+    customerName: undefined,
+    status: undefined,
+  };
+  constructor(public modalCtrl: ModalController, public router: Router, private salesService: SalesService) { }
 
 
   ngOnInit() {
@@ -37,12 +46,12 @@ export class SalesPage implements OnInit {
       component: SearchFilterPage
     });
 
-    this.filterObj = modal.onDidDismiss();
+    this.filterParameters = modal.onDidDismiss();
 
 
     modal.onDidDismiss()
       .then((res) => {
-        this.filterObj = res.data;// Here's your selected user!
+        this.filterParameters = res.data;// Here's your selected user!
       });
 
     return await modal.present();
@@ -52,10 +61,10 @@ export class SalesPage implements OnInit {
     console.log(this.searchKey);
   }
 
-  async getAllSales({ searchString, filter }: { searchString?: string; filter?: any; } = {}) {
-    for (let i = 0; i < 50; i++) {
-      this.sales.push(this.sale);
-    }
+  async getAllSales() {
+    this.salesService.loadAllSales(this.filterParameters).subscribe(res => {
+      console.log(res);
+    })
   }
 
   async editSale(sale: any) {

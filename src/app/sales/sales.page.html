@@ -2,7 +2,7 @@
 <ion-header >
   <ion-toolbar >
 
-    <ion-searchbar placeholder="Pesquisar" animated  [(ngModel)]="searchKey"></ion-searchbar>
+    <ion-searchbar placeholder="Pesquisar" animated  [(ngModel)]="filterParameters.customerName"></ion-searchbar>
 
     <ion-buttons slot="end">
       <ion-button  size="small" shape="round" (click)="searchFilter()">

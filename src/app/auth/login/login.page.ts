@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.onLoginForm = this.formBuilder.group({
-      'email': [null, Validators.compose([
+      'username': [null, Validators.compose([
         Validators.required
       ])],
       'password': [null, Validators.compose([
@@ -38,8 +38,8 @@ export class LoginPage implements OnInit {
 
   async login() {
     console.log(this.onLoginForm.value);
-
-    this.authService.login();
+    
+    this.authService.login(this.onLoginForm.value);
     const loader = await this.loadingCtrl.create({
       spinner:"crescent",
       duration: 1,
