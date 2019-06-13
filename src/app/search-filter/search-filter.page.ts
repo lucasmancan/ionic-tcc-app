@@ -8,11 +8,13 @@ import { ModalController } from '@ionic/angular';
 })
 export class SearchFilterPage implements OnInit {
  
-  public filterObj:any = {
-    rangePrice : {
-      upper: 500,
-      lower: 10
-    }
+  public filterParameters:any = {
+    rangePrice: {
+      lower: 0,
+      upper: 5000
+    },
+    customerName:undefined,
+    status:undefined,
   };
 
   constructor(private modalCtrl: ModalController) { }
@@ -21,7 +23,7 @@ export class SearchFilterPage implements OnInit {
   }
 
   async closeModal() {
-    await this.modalCtrl.dismiss(this.filterObj);
+    await this.modalCtrl.dismiss(this.filterParameters);
   }
 
 }
