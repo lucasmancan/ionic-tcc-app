@@ -18,30 +18,34 @@
   </ion-list-header>
 
   <ion-virtual-scroll [items]="sales" class="animation-fadeIn">
-    <ion-item no-lines lines="none" *virtualItem="let sale" (click)="editSale(sale)"
-    >
-      <ion-grid >
+    <ion-item  *virtualItem="let sale" (click)="editSale(sale)" style="margin: 4px; border-radius: 20px">
+      <ion-grid style=" background-color: rgba(255, 255, 255, .1);border-radius: 5px">
         
-        <ion-row>
-          <ion-col size="12">
-            <span >{{sale.clientName}}</span>
+        <ion-row  >
+          <ion-col size="12" style="font-size: 14px" >Vendedor: 
+            <span style="color: #FF9800">Lucas Frederico Mançan</span>
           </ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col size="12">
-            Quentinha do Dia ({{sale.date}})
+          <ion-col size="12" style="color: #fafafa; font-size: 11px">
+            Data {{sale.createdAt}}
           </ion-col>
         </ion-row>
-        
+     
         <ion-row>
-          <ion-col size="7">
-            {{sale.gateway}} ({{sale.type}})
+          <!-- <ion-col size="7">
+            {{sale.gateway}} ({{sale.state}})
+          </ion-col> -->
+          <ion-col size="6">
+            <div *ngIf="sale.state === 'PEN'" style="color: yellow; font-size: 13px">Pendente</div>
+            <div *ngIf="sale.state === 'CAN'" style="color: red; font-size: 13px">Cancelada</div>
+            <div *ngIf="sale.state === 'APR'" style="color: green; font-size: 13px">Aprovada</div>
           </ion-col>
-
-          <ion-col size="5">
-              <div >R$ {{sale.totalValue}}</div>
-            </ion-col>
+          <ion-col size="6">
+            <div >R$ {{sale.amount}}</div>
+          </ion-col>
+       
         </ion-row>
       
       </ion-grid>

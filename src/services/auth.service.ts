@@ -31,16 +31,21 @@ export class AuthService {
   }
 
   public login(data: any) {
-    return this.http.post(environment.baseUrl + '/auth', data, {
-      headers: new HttpHeaders()
-        .set('Access-Control-Allow-Headers', 'Authorization'),
+    return this.http.post(environment.baseUrl + '/auth', data
+    // , {
+      // headers: new HttpHeaders()
+      //   .set('Access-Control-Allow-Headers', 'Authorization'),
 
-      observe: 'response'
-    }).subscribe((res:any) => {
+      // observe: 'response'
+    // }
+    
+    ).subscribe((res:any) => {
+      this.authState$.next(true);
+
       // console.log(res.headers.get('Authorization'));
-      this.storage.set(TOKEN_KEY, res.headers.get('Authorization')).then(res => {
-        this.authState$.next(true);
-      })
+      // this.storage.set(TOKEN_KEY, res.headers.get('Authorization')).then(res => {
+      //   this.authState$.next(true);
+      // })
     });
   }
 

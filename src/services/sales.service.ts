@@ -23,7 +23,10 @@ export class SalesService {
         }
 
         if (parameters.size) {
-            queryString += '&size=' + 15;
+            queryString += '&size=' + parameters.size;
+        }else{
+            queryString += '&size=' + 50;
+
         }
 
         if(parameters.customerName){

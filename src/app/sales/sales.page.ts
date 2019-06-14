@@ -14,8 +14,7 @@ export class SalesPage implements OnInit {
   sale: any = { id: "213123", date: "02 de Dezembro ás 16:22", type: "Débito", clientName: "Lucas Frederico Mançan", totalValue: "2.140,78", gateway: "PagSeguro"}
 
   public searchKey: string = '';
-  sales: any[] = [{ id: "213123", date: "05 de Maio ás 12:42", type: "Crédito", clientName: "Pedro Henrique Farbo Costa", totalValue: "12.500,00", gateway: "Cielo"}, { id: "213123",  date: "30 de Feveiro ás 10:12", type: "Crediário", clientName: "Matheus Henrique da Silva", totalValue: "2.320,50", gateway: "Paypal"}];
-
+  sales: any[]= [];
   private _filterObj: any = {};
   public filterParameters: any = {
     rangePrice: {
@@ -62,13 +61,19 @@ export class SalesPage implements OnInit {
   }
 
   async getAllSales() {
-    this.salesService.loadAllSales(this.filterParameters).subscribe(res => {
-      console.log(res);
+    this.salesService.loadAllSales(this.filterParameters).subscribe(async (res) => {
+      console.log(res.content);
+       await res.content.forEach(element => {
+        element.createdAt = new Date(element.createdAt);
+      });
+
+      this.sales = res.content;
+
     })
   }
 
   async editSale(sale: any) {
-    this.router.navigate(["/sales/sale/", sale.id]);
+    this.router.navigate(["/sales/sale/", sale.code]);
   }
 
   async newSale(sale: any) {

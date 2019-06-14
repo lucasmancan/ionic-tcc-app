@@ -1,3 +1,5 @@
+import { HttpConfigInterceptor } from './../httpconfig.interceptor';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -12,7 +14,6 @@ import { AppComponent } from './app.component';
 import { OptionsPageModule } from './options/options.module';
 import { SearchFilterPageModule } from './search-filter/search-filter.module';
 import { SalesService } from 'src/services/sales.service';
-import { HttpConfigInterceptor } from 'src/httpconfig.interceptor';
 import { AuthService } from 'src/services/auth.service';
 
 @NgModule({
