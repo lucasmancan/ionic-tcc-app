@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Opções de Busca
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item margin-bottom>
+    <ion-label stacked>
+      <ion-text class="fw500">Nome do Cliente</ion-text>
+    </ion-label>
+    <ion-input
+      [(ngModel)]="filterParameters.customerName"
+      type="text"
+      placeholder="Ex: Tony Stark"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="fw500" color="dark">Ordenação</ion-label>
+    <ion-select [(ngModel)]="filterParameters.status">
+      <ion-select-option>Pendente</ion-select-option>
+      <ion-select-option>Cancelada</ion-select-option>
+      <ion-select-option>Finalizadas</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item margin-bottom>
+    <ion-label class="no-margin-bottom">
+      <ion-text color="dark" class="fw500">Min/Max Valor:</ion-text>
+    </ion-label>
+    <ion-range
+      dualKnobs="true"
+      [(ngModel)]="filterParameters.rangePrice"
+      min="10"
+      max="10000"
+      step="10"
+      class="no-padding-top"
+    >
+      <ion-label slot="start"
+        ><ion-text color="primary"
+          >$ {{ filterParameters?.rangePrice?.lower }}</ion-text
+        ></ion-label
+      >
+      <ion-label slot="end"
+        ><ion-text color="primary"
+          >$ {{ filterParameters?.rangePrice?.upper }}</ion-text
+        ></ion-label
+      >
+    </ion-range>
+  </ion-item>
+
+  <ion-button expand="block" (click)="closeModal()"
+    >Pesquisar Vendas</ion-button
+  >
+</ion-content>

@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cod: #{{ sale.code }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form novalidate #saleForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">
+        <ion-text class="fw500">Total</ion-text>
+      </ion-label>
+      <ion-input
+        class="form-control"
+        name="firstName"
+        id="firstName"
+        type="text"
+        [(ngModel)]="sale.amount"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-text class="fw500">Total Bruto</ion-text>
+      </ion-label>
+      <ion-input
+        class="form-control"
+        name="lastName"
+        id="lastName"
+        type="text"
+        [(ngModel)]="sale.grossAmount"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-text class="fw500">Descontos</ion-text>
+      </ion-label>
+      <ion-input
+        class="form-control"
+        name="Descontos"
+        id="Descontos"
+        type="text"
+        [(ngModel)]="sale.discount"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-text class="fw500">Outras Despesas</ion-text>
+      </ion-label>
+      <ion-input
+        class="form-control"
+        name="OutrasDespesas"
+        id="OutrasDespesas"
+        type="text"
+        [(ngModel)]="sale.otherExpenses"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="fw500" color="dark" position="floating"
+        >Status</ion-label
+      >
+      <ion-select name="select" [(ngModel)]="sale.status">
+        <ion-select-option *ngFor="let status of saleStatus">{{
+          status
+        }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item margin-bottom>
+      <ion-label position="floating">
+        <ion-text class="fw500">Último Nome</ion-text>
+      </ion-label>
+      <ion-list>
+        <ion-item *ngFor="let item of sale.itens">
+          <ion-label>Pokémon Yellow</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+    <ion-button expand="block" color="primary" (click)="onSubmit()"
+      >Salvar</ion-button
+    >
+  </form>
+</ion-content>

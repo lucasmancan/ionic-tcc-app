@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cod: #{{ sale.id }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="userForm" novalidate>
+    <ion-item>
+      <ion-label position="floating">
+        <ion-text class="fw500">Total</ion-text>
+      </ion-label>
+      <ion-input
+        class="form-control"
+        name="firstName"
+        id="firstName"
+        type="text"
+        [(ngModel)]="sale.amount"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-text class="fw500">Total Bruto</ion-text>
+      </ion-label>
+      <ion-input
+        class="form-control"
+        name="lastName"
+        id="lastName"
+        type="text"
+        [(ngModel)]="sale.grossAmount"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="fw500" color="dark" position="floating"
+        >Status</ion-label
+      >
+      <ion-select formControlName="role" [(ngModel)]="sale.status">
+        <ion-select-option *ngFor="let status of saleStatus">{{
+          status
+        }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- <ion-item margin-bottom>
+      <ion-label position="floating">
+        <ion-text class="fw500">Último Nome</ion-text>
+      </ion-label>
+      <ion-textarea
+        class="form-control"
+        name="notes"
+        id="notes"
+        formControlName="notes"
+        rows="6"
+      ></ion-textarea>
+    </ion-item> -->
+    <ion-button expand="block" color="primary" (click)="onSubmit()"
+      >Salvar</ion-button
+    >
+  </form>
+</ion-content>
