@@ -1,15 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { Routes, RouterModule } from "@angular/router";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { LoginPage } from './login.page';
+import { LoginPage } from "./login.page";
+import { AuthService } from "src/services/auth.service";
+import { AppService } from "src/services/app.service";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: LoginPage
   }
 ];
@@ -23,6 +25,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
+  providers: [AuthService, AppService]
 })
 export class LoginPageModule {}

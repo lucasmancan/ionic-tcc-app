@@ -1,20 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController } from '@ionic/angular';
-import { SearchFilterPage } from '../search-filter/search-filter.page';
-import { Router } from '@angular/router';
-import { SalesService } from 'src/services/sales.service';
+import { Component, OnInit, OnChanges } from "@angular/core";
+import { ModalController, NavController } from "@ionic/angular";
+import { SearchFilterPage } from "../search-filter/search-filter.page";
+import { Router, ActivatedRoute } from "@angular/router";
+import { SalesService } from "src/services/sales.service";
 
 @Component({
-  selector: 'app-sales',
-  templateUrl: './sales.page.html',
-  styleUrls: ['./sales.page.scss'],
+  selector: "app-sales",
+  templateUrl: "./sales.page.html",
+  styleUrls: ["./sales.page.scss"]
 })
-export class SalesPage implements OnInit {
+export class SalesPage implements OnInit, OnChanges {
+  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
+    console.log("MUDOU");
+    this.getAllSales();
+  }
+  sale: any = {
+    id: "213123",
+    date: "02 de Dezembro ás 16:22",
+    type: "Débito",
+    clientName: "Lucas Frederico Mançan",
+    totalValue: "2.140,78",
+    gateway: "PagSeguro"
+  };
 
-  sale: any = { id: "213123", date: "02 de Dezembro ás 16:22", type: "Débito", clientName: "Lucas Frederico Mançan", totalValue: "2.140,78", gateway: "PagSeguro"}
-
-  public searchKey: string = '';
-  sales: any[]= [];
+  public searchKey: string = "";
+  sales: any[] = [];
   private _filterObj: any = {};
   public filterParameters: any = {
     rangePrice: {
@@ -22,13 +32,20 @@ export class SalesPage implements OnInit {
       upper: 5000
     },
     customerName: undefined,
-    status: undefined,
+    status: undefined
   };
-  constructor(public modalCtrl: ModalController, public router: Router, private salesService: SalesService) { }
-
+  constructor(
+    public modalCtrl: ModalController,
+    private route: ActivatedRoute,
+    public router: Router,
+    private salesService: SalesService
+  ) {}
 
   ngOnInit() {
     this.getAllSales();
+    this.route.params.subscribe(params => {
+      this.getAllSales();
+    });
   }
 
   get filterObj() {
@@ -47,11 +64,11 @@ export class SalesPage implements OnInit {
 
     this.filterParameters = modal.onDidDismiss();
 
-
-    modal.onDidDismiss()
-      .then((res) => {
-        this.filterParameters = res.data;// Here's your selected user!
-      });
+    modal.onDidDismiss().then(res => {
+      this.filterParameters = res.data; // Here's your selected user!
+      this.getAllSales();
+    });
+    this.getAllSales();
 
     return await modal.present();
   }
@@ -61,15 +78,16 @@ export class SalesPage implements OnInit {
   }
 
   async getAllSales() {
-    this.salesService.loadAllSales(this.filterParameters).subscribe(async (res) => {
-      console.log(res.content);
-       await res.content.forEach(element => {
-        element.createdAt = new Date(element.createdAt);
+    this.salesService
+      .loadAllSales(this.filterParameters)
+      .subscribe(async res => {
+        console.log(res);
+        await res.data.content.forEach(element => {
+          element.updatedAt = new Date(element.updatedAt);
+        });
+
+        this.sales = res.data.content;
       });
-
-      this.sales = res.content;
-
-    })
   }
 
   async editSale(sale: any) {
